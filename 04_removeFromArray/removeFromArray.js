@@ -1,12 +1,13 @@
-const removeFromArray = function (passedArray, unwantedNum) {
+const removeFromArray = function (passedArray, ...unwantedNums) {
   const newArray = [];
 
-  for (let i = 0; i < passedArray.length; i++) {
-    if (passedArray[i] === unwantedNum) {
-      continue;
-    }
+  console.log(passedArray);
+  console.log(unwantedNums);
 
-    newArray.push(passedArray[i]);
+  for (const num of passedArray) {
+    if (!unwantedNums.includes(num)) {
+      newArray.push(num);
+    }
   }
 
   return newArray;
